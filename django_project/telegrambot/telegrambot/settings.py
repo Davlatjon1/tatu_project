@@ -136,12 +136,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 JAZZMIN_SETTINGS = {
-    "site_header": "AgroMash admin",
+    "site_header": "SAMTUIT admin",
     "topmenu_links": [
         {"name": "Главная страница", "url": "admin:index", "permissions": ["auth.view_user"]},
         {"model": "auth.User"},
     ],
-    "copyright": "VENONS",
+    "copyright": "SAMTUIT PROJECT",
 }
 
 STATIC_URL = '/static/'
