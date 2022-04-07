@@ -83,6 +83,7 @@ class Constants(TimeBasedModel):
     currency = models.ForeignKey(Currency, verbose_name='Основная валюта', on_delete=models.CASCADE, blank=True,
                                  null=True)
     timeout_cancel_order = models.IntegerField(default=0, verbose_name='Таймаут отказа заказа', blank=True)
+    access_bot = models.BooleanField(verbose_name='По-умолчанию доступ к боту', default=False)
 
     def channels_tg(self):
         return [res.channel_id for res in self.channels.all()]
@@ -90,6 +91,11 @@ class Constants(TimeBasedModel):
     @staticmethod
     def default_constant():
         return Constants.objects.first()
+
+    @staticmethod
+    def get_access_bot():
+        first = Constants.default_constant()
+        return first.access_bot
 
     def __str__(self):
         return f'№{self.id} - Константа'

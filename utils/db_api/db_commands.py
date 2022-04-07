@@ -4,6 +4,7 @@ from typing import List
 
 from asgiref.sync import sync_to_async
 
+from django_project.telegrambot.constants.models import Constants
 from utils.values.values_django import STATUS_ON_THE_WAY
 from django_project.telegrambot.usersmanage.models import Item, User, BasketItem, OrderItem, Order, Review, Category, \
     AdditionOrderItem, MainReview
@@ -17,7 +18,7 @@ from utils.values.others import get_attribute_by_language
 async def get_user(user_id, full_name, username):
     user = await select_user(user_id=int(user_id), username=username)
     if not user:
-        user = User(user_id=int(user_id), name=full_name, username=username)
+        user = User(user_id=int(user_id), name=full_name, username=username, access=Constants.get_access_bot())
         user.save()
 
     return user
