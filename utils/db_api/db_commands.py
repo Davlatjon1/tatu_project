@@ -26,7 +26,7 @@ async def get_user(user_id, full_name, username):
 
 @sync_to_async
 def add_user(user_id, full_name, username):
-    return User(user_id=int(user_id), name=full_name, username=username).save()
+    return User(user_id=int(user_id), name=full_name, username=username, access=Constants.get_access_bot()).save()
 
 
 def get_available_users(**kwargs):
