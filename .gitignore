@@ -1,0 +1,17 @@
+/*
+!data/
+!django_project/
+!filters/
+!handlers/
+!keyboards/
+!middlewares/
+!states
+!utils
+!app.py
+!django_app.py
+!loader.py
+!requirements.txt
+!.gitignore
+!README.md
+__pycache__/
+*.py[cod]
